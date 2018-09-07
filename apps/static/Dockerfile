@@ -1,5 +1,5 @@
-FROM    nginx:1.15.3-alpine
+FROM nginx:1.15.3-alpine
 
-COPY    src/ /usr/share/nginx/html/
+COPY src/ /usr/share/nginx/html/
 
-EXPOSE  80
+EXPOSE 80

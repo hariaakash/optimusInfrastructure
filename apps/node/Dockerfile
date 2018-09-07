@@ -1,13 +1,13 @@
-FROM    node:10.9.0-alpine
+FROM node:10.9.0-alpine
 
 WORKDIR /usr/src/app
 
-COPY    src/package*.json ./
+COPY src/package*.json ./
 
-RUN     npm install
+RUN npm install
 
-COPY    src .
+COPY src .
 
-EXPOSE  8080
+EXPOSE 8080
 
-CMD     [ "npm", "start" ]
+CMD ["npm", "start"]
