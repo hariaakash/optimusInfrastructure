@@ -1,5 +1,9 @@
 FROM nginx:1.15.3-alpine
 
-COPY src/ /usr/share/nginx/html/
+WORKDIR /app
 
-EXPOSE 80
+COPY src .
+
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 8080

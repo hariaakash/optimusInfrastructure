@@ -1,8 +1,8 @@
 FROM python:3.7.0-alpine3.8
 
-WORKDIR /usr/src/app
+WORKDIR /app
 
-COPY src/* ./
+COPY src .
 
 RUN pip install -r requirements.txt
 

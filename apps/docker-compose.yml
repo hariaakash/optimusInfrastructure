@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+    nodeapp:
+        build: ./node
+        image: hariaakash/op-node
+        ports:
+            - 5001:8080
+    flaskapp:
+        build: ./flask
+        image: hariaakash/op-flask
+        ports:
+            - 5002:8080
+    staticapp:
+        build: ./static
+        image: hariaakash/op-static
+        ports:
+            - 5003:8080

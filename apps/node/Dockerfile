@@ -1,12 +1,10 @@
 FROM node:10.9.0-alpine
 
-WORKDIR /usr/src/app
-
-COPY src/package*.json ./
-
-RUN npm install
+WORKDIR /app
 
 COPY src .
+
+RUN npm install
 
 EXPOSE 8080
 
