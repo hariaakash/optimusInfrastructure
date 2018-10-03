@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apk update && \
     apk upgrade && \
-    apk --no-cache add wget unzip ca-certificates
+    apk --no-cache add wget unzip ca-certificates gcc
 
 COPY ./entrypoint.sh /entrypoint.sh
 
