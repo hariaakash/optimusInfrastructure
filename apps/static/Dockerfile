@@ -3,8 +3,7 @@ FROM nginx:1.15.3-alpine
 WORKDIR /app
 
 RUN apk update && \
-    apk upgrade && \
-    apk --no-cache add wget unzip ca-certificates
+    apk upgrade
 
 COPY ./entrypoint.sh /entrypoint.sh
 
