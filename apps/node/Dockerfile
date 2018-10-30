@@ -3,8 +3,7 @@ FROM node:10.9.0-alpine
 WORKDIR /app
 
 RUN apk update && \
-    apk upgrade && \
-    apk --no-cache add wget unzip ca-certificates
+    apk upgrade
 
 COPY ./entrypoint.sh /entrypoint.sh
 
