@@ -14,4 +14,6 @@ EXPOSE 8080
 
 ENTRYPOINT ["/bin/ash", "/entrypoint.sh"]
 
-CMD ["python", "app.py"]
+CMD ["export", "FLASK_APP=app.py"]
+
+CMD ["flask", "run"]
