@@ -8,18 +8,14 @@
 # Database owned by mongodb
 [ "$(stat -c %U /data/db)" = mongodb ] || chown -R mongodb /data/db
 
-echo "Start Mongo"
-mongod --fork --logpath /data/logs/mongodb.log
+mongod --fork --logpath /data/logs/mongodb.log --config /etc/mongod.conf
 
-echo "Exec Mongo"
 mongo admin --eval \
     "db.createUser({user: 'root',
         pwd: '12345678',
         roles: [{role: 'root', db: 'admin'}]
     });"
 
-echo "Stop Mongo"
 mongod --shutdown
 
-echo "Start Mongo"
-exec mongod --bind_ip 0.0.0.0
+exec mongod --bind_ip 0.0.0.0 --config /etc/mongod.conf
