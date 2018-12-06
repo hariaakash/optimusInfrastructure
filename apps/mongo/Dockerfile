@@ -7,9 +7,11 @@ RUN apk --no-cache add mongodb
 
 RUN rm -f /var/cache/apk/*
 
-RUN mkdir -p /data/db
+RUN mkdir -p /data/db /data/logs
 
 COPY ./entrypoint.sh /entrypoint.sh
+
+COPY ./mongod.conf /etc/mongod.conf
 
 EXPOSE 27017
 
